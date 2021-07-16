@@ -75,6 +75,7 @@ def dfs(folderpath,filtering):
     _dfs = []
     col_names = ['C{0:01d}'.format(i) for i in range(17)]
     for path in filepaths:
+        st.write(path) #debug
         _df = pd.read_csv(path, encoding='cp932', sep = '\t',index_col="C0", names=col_names)
         _dfs.append(_df)
         st.write(_df) # debug
