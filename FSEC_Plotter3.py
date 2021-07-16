@@ -72,13 +72,12 @@ def DC_number(Detector, Channel, Det_Ch):
 # 各ファイルをpd.DataFrameとして保存
 def dfs(folderpath,filtering):
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
+    st.write(filepaths) #debug
     _dfs = []
     col_names = ['C{0:01d}'.format(i) for i in range(17)]
     for path in filepaths:
-        st.write(path) #debug
         _df = pd.read_csv(path, encoding='cp932', sep = '\t',index_col="C0", names=col_names)
         _dfs.append(_df)
-        st.write(_df) # debug
     return _dfs
 
 
@@ -216,7 +215,6 @@ def plotly_plot(data,Det_Ch,folderpath,xlim):
 def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataType="folder",filtering="",xlim=[0,30]):    
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
     _dfs = dfs(folderpath,filtering)
-    st.write(folderpath) #debug
     entire_info = entire_information(_dfs[0])
     data = []
     Det_Ch = Det_Ch_list(entire_info)
