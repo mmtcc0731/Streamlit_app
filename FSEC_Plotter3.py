@@ -72,7 +72,7 @@ def DC_number(Detector, Channel, Det_Ch):
 # 各ファイルをpd.DataFrameとして保存
 def dfs(folderpath,filtering):
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
-    st.write(filepaths) #debug
+    st.write(folderpath) #debug
     _dfs = []
     col_names = ['C{0:01d}'.format(i) for i in range(17)]
     for path in filepaths:
