@@ -68,10 +68,11 @@ def DC_number(Detector, Channel, Det_Ch):
         st.warning('Detector '+Detector+'/Ch {}'.format(Channel)+' dose not exist.')
         st.stop()
     return Det_Ch.index(DC)
-import re # debug
+
 # 各ファイルをpd.DataFrameとして保存
 def dfs(folderpath,filtering):
-    filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
+    #filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
+    filepaths = ["/Users/murakoshi/Dropbox/研究_SIDT2/FSEC/210715/210714_murakoshi_SIDT2_LAMP2C_CoEx_infected_DCtoD_10.txt"]
     st.write(folderpath) #debug
     _dfs = []
     col_names = ['C{0:01d}'.format(i) for i in range(17)]
@@ -214,7 +215,8 @@ def plotly_plot(data,Det_Ch,folderpath,xlim):
 
 def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataType="folder",filtering="",xlim=[0,30]):    
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
-    st.write("filepaths:",filepaths)
+    #st.write("filepaths:",filepaths) #debug
+    filepaths = ["/Users/murakoshi/Dropbox/研究_SIDT2/FSEC/210715/210714_murakoshi_SIDT2_LAMP2C_CoEx_infected_DCtoD_10.txt"]
     _dfs = dfs(folderpath,filtering)
     entire_info = entire_information(_dfs[0])
     data = []
