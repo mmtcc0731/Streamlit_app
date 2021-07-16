@@ -233,7 +233,7 @@ def wavelength_display(folderpath,filtering):
     for df in _dfs:
         samples.append(get_element_from_index(df,"C1","Sample Name",TYPE=str))
     sample = st.sidebar.selectbox('sample',samples)
-    st.write(sample)
+    st.write(samples)
     ind = samples.index(sample)
     data = _dfs[ind]
     wavelength = splited_df_information(split_df(data)[DC_number(Detector, Channel, Det_Ch_list(entire_info))])[2]
