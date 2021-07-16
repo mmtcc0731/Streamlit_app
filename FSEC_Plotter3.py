@@ -77,6 +77,7 @@ def dfs(folderpath,filtering):
     for path in filepaths:
         _df = pd.read_csv(path, encoding='cp932', sep = '\t',index_col="C0", names=col_names)
         _dfs.append(_df)
+    st.write(_dfs) # debug
     return _dfs
 
 
