@@ -214,7 +214,7 @@ def plotly_plot(data,Det_Ch,folderpath,xlim):
 def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataType="folder",filtering="",xlim=[0,30]):    
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
     _dfs = dfs(folderpath,filtering)
-    st.write(_dfs[0]) #debug
+    st.write(_dfs) #debug
     entire_info = entire_information(_dfs[0])
     data = []
     Det_Ch = Det_Ch_list(entire_info)
