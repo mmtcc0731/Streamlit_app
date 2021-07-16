@@ -228,6 +228,8 @@ def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataTyp
 
 # app上のカラムにWavelengthを表示する
 def wavelength_display(folderpath,filtering):
+    st.write(folderpath)
+    st.write("filtering:",filtering)
     samples = []
     _dfs = dfs(folderpath,filtering)
     for df in _dfs:
