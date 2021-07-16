@@ -68,7 +68,7 @@ def DC_number(Detector, Channel, Det_Ch):
         st.warning('Detector '+Detector+'/Ch {}'.format(Channel)+' dose not exist.')
         st.stop()
     return Det_Ch.index(DC)
-
+import re # debug
 # 各ファイルをpd.DataFrameとして保存
 def dfs(folderpath,filtering):
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
