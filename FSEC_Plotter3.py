@@ -230,8 +230,9 @@ def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataTyp
 def wavelength_display(folderpath,filtering):
     samples = []
     _dfs = dfs(folderpath,filtering)
-    for df in _dfs:
-        samples.append(get_element_from_index(df,"C1","Sample Name",TYPE=str))
+    for df in range(len(_dfs)):
+        _df = _dfs[df]
+        samples.append(get_element_from_index(_df,"C1","Sample Name",TYPE=str))
     sample = st.sidebar.selectbox('sample',samples)
     st.write(samples) #debug
     ind = samples.index(sample)
