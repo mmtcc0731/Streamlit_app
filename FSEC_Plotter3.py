@@ -77,7 +77,7 @@ def dfs(folderpath,filtering):
     for path in filepaths:
         _df = pd.read_csv(path, encoding='cp932', sep = '\t',index_col="C0", names=col_names)
         _dfs.append(_df)
-    return(_dfs)
+    return _dfs
 
 
 # ### 2. 任意のファイルの情報をまとめる
