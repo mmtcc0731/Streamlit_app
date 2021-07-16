@@ -228,17 +228,15 @@ def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataTyp
 
 # app上のカラムにWavelengthを表示する
 def wavelength_display(folderpath,filtering):
-    st.write(folderpath)
-    st.write("filtering:",filtering)
     samples = []
     _dfs = dfs(folderpath,filtering)
     for df in _dfs:
-        st.write(df) #debug
         samples.append(get_element_from_index(df,"C1","Sample Name",TYPE=str))
     sample = st.sidebar.selectbox('sample',samples)
     st.write(samples) #debug
     ind = samples.index(sample)
     data = _dfs[ind]
+    entire_info = entire_information(data)
     wavelength = splited_df_information(split_df(data)[DC_number(Detector, Channel, Det_Ch_list(entire_info))])[2]
     if len(wavelength) == 1:
         st.sidebar.write("Wavelength (nm): ", wavelength[0])
