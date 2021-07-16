@@ -214,6 +214,7 @@ def plotly_plot(data,Det_Ch,folderpath,xlim):
 
 def FSEC_plotter_filename(folderpath,Detector,Channel,linewidth=2.5,InputDataType="folder",filtering="",xlim=[0,30]):    
     filepaths = glob(folderpath+"/*{}*.txt".format(filtering))
+    st.write("filepaths:",filepaths)
     _dfs = dfs(folderpath,filtering)
     entire_info = entire_information(_dfs[0])
     data = []
@@ -258,7 +259,7 @@ if len(folderpath) < 1:
     st.warning("Please input folder path")
     st.stop()
     
-filtering = st.sidebar.text_input(label='filter', value="",key='c') # ,区切りで複数の単語を入れられるようにする。正規表現を用いる。
+filtering = st.sidebar.text_input(label='filter') # ,区切りで複数の単語を入れられるようにする。正規表現を用いる。
 
 #_df = dfs(folderpath,filtering)[0]
 #entire_info = entire_information(_df)
