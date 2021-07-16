@@ -256,8 +256,8 @@ if len(folderpath) < 1:
     
 filtering = st.sidebar.text_input(label='filter', value="",key='c') # ,区切りで複数の単語を入れられるようにする。正規表現を用いる。
 
-_df = dfs(folderpath,filtering)[0]
-entire_info = entire_information(_df)
+#_df = dfs(folderpath,filtering)[0]
+#entire_info = entire_information(_df)
 
 InputDataType = "folder"
 
