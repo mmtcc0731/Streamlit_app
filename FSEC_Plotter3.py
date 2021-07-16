@@ -264,7 +264,7 @@ filtering = st.sidebar.text_input(label='filter', value="",key='c') # ,区切り
 
 InputDataType = "folder"
 
-wavelength_display(folderpath,filtering)
+#wavelength_display(folderpath,filtering)
 
 container = st.beta_container()
 with container:
